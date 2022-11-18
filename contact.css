@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
+body {
+  height: 100%;
+  width: 100%;
+  font-weight: 400;
+  background-color: #e1e1e1;
+}
+.bg-top {
+  background-image: url("main1.jpg");
+  background-position: center center;
+  padding: 0;
+}
+body > .part-1 {
+  margin: 0;
+}
+body > .part-1 > .headLine {
+  background-color: #07173b;
+  padding-top: 100%;
+}
+body > .bg-top > .bg-top-dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: -8px 10px 15px black;
+}
+#view-menu {
+  background-color: transparent;
+  font-size: 1.2rem;
+  padding: 0.9rem 1.2rem;
+  color: #f1f1f1;
+  border: 2px solid #f1f1f1;
+  font-family: roboto;
+  border-radius: 30px;
+  font-weight: 800;
+  transition: 0.15s;
+}
+#view-menu:hover {
+  color: black;
+  background-color: #f1f1f1;
+  font-family: roboto;
+  box-shadow: 5px 5px 15px black;
+  transition: 0.15s;
+}
+.details {
+  color: #f1f1f1;
+}
+.toggle-button {
+  color: #ca2826;
+}
+.main-title {
+  font-family: lobster two;
+  font-size: 2rem;
+  padding: 0.2rem;
+  color: orange;
+  transition: 0.15s;
+  font-weight: 600;
+  margin-right: 2rem;
+}
+#menu-page-icon {
+  margin-right: 2rem;
+}
+.main-title:hover {
+  color: #459247;
+  transition: 0.15s;
+}
+.what-do-we-got {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: nanum myeongjo;
+}
+.sub-text {
+  color: black;
+  font-weight: 600;
+}
+.image-1 {
+  margin-top: 1rem;
+}
+.fa-angle-double-right {
+  color: #67d642;
+}
+.name {
+  margin-top: 1rem;
+  padding-left: 40px;
+  text-align: center;
+  font-family: sacramento;
+}
+.part-1 {
+  padding-top: 10rem;
+  margin-top: -6rem;
+}
+hr {
+  border-width: 2px;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------CONTACT PAGE------------ */

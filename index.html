@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grill N chill Restaurant</title>
+    <!-- Link for favicon -->
+    <link rel="icon" href="/logo.png" sizes="16x16" />
+    <!-- Link for Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2d98f6439c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!--CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body onscroll="topScrollFunction()">
+    <button onclick="topFunction()" class="topper"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M6 4H18V6H6zM6.707 15.707L11 11.414 11 20 13 20 13 11.414 17.293 15.707 18.707 14.293 12 7.586 5.293 14.293z"></path></svg></button>
+    <nav class="sticky-top navigation navbar navbar-expand-lg navbar-dark menu-navbar">
+      <div class="container-fluid">
+        <a class="main-title navbar-brand" href="index.html">Grill N Chill</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="toggle-button">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              height="2em"
+              width="2em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M464 256H48a48 48 0 0 0 0 96h416a48 48 0 0 0 0-96zm16 128H32a16 16 0 0 0-16 16v16a64 64 0 0 0 64 64h352a64 64 0 0 0 64-64v-16a16 16 0 0 0-16-16zM58.64 224h394.72c34.57 0 54.62-43.9 34.82-75.88C448 83.2 359.55 32.1 256 32c-103.54.1-192 51.2-232.18 116.11C4 180.09 24.07 224 58.64 224zM384 112a16 16 0 1 1-16 16 16 16 0 0 1 16-16zM256 80a16 16 0 1 1-16 16 16 16 0 0 1 16-16zm-128 32a16 16 0 1 1-16 16 16 16 0 0 1 16-16z"
+              ></path>
+            </svg>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a style="color:orange; "class="nav-link navItem"  href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="menu.html">Our Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="review.html"
+                >Rate Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid bg-top ">
+      <div class="container-fluid bg-top-dark pb-5">
+        <span id="top"></span>
+        <div class="container-fluid part-1 pb-5">
+          <div class="row pt-5 pb-5 headLine">
+            <div class="col name">
+              <h1 class="display-1 line-1">
+                <br>
+                  Welcome to
+                   Grill N Chill
+              </h1>
+              <h2 class="display-3 line-2 mt-1">Where Flavour Gets its Wings</h2><br>
+               <a href="menu.html"><button class="btn" id="view-menu">View Menu</button></a>
+              <br><br><br>
+            </div>
+          </div>
+        </div>  
+      </div>
+      </div>
+    <div class="container-md what-do-we-got">
+      <h1 class="display-4 sub-text">What do we got?</h1>
+    </div>
+    <div class="container-md" id="carousel-padding">
+      <div id="carouselIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselIndicators"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
+        <div class="carousel-inner" id="carousel-area">
+          <div class="carousel-item active">
+            <a href="menu.html">
+              <img src="one.png" class="d-block w-100" alt="Biriyani" />
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="menu.html">
+            <img src="two.png" class="d-block w-100" alt="Shawarma" /></a>
+          </div>
+          <div class="carousel-item">'
+            <a href="menu.html">
+            <img src="three.png" class="d-block w-100" alt="Momos" /></a>
+          </div>
+          <div class="carousel-item">
+            <a href="menu.html">
+            <img src="four.png" class="d-block w-100" alt="Kebab" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid part-2">
+      <div class="row">
+        <div class="col-sm-12 flex">
+          <a href="menu.html">
+            <button class="order-now">ORDER NOW</button></a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="container-md">
+      <div class="row">
+        <h4 class="mb-4 about-heading display-4">About Us</h4>
+        <div class="col-12">
+          <h4 class="display-4 mb-4 about-sub fw-bold">Who we are...?</h4>
+          <p class="about-text">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Grill N Chill is a Multi-Cuisine restaurant, where you'll get
+            <b>Indian, European, Chinese, Arabian, Spanish</b> Indian,
+            European, Chinese, Arabian, Spanish and much more delicacies
+            served. There's nothing cookie - cutter about Grill N Chill. Not
+            the food we serve. And defenitely not the way we live life. Around
+            here we don't settle for anything less than food we're proud to
+            serve. And we don't just clock in. Not when we can also become our
+            best, make friends, and have fun while we're at it. We make our
+            food with our very own <b>Home grown spices.</b>
+            <br /><br>
+            <div class="spices container-md">
+            </div>
+            <br />
+          </p>
+          <h4 class="display-4 mb-4 fw-bold about-sub">What we're about...?</h4>
+          <p class="about-text">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At Grill N Chill, we don't
+            just make food. We make people happy. Grill N Chill was build on
+            the belief that Grill N Chill Food Nights should be special, and we
+            carry belief into everything we do, With many years of experience
+            under our belts, we understand how to best serve our customers
+            through tried and true service principles.
+            <b>
+              We create food we're proud to serve and deliver it fast, with a
+              smile. </b
+            ><br /><br>
+          </p>
+          <div class="table container-md">
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container-fluid" id='about-bottom'>
+      <div class="container-fluid" id="about-bottom-alpha">
+        <div class="container-md" id="about-btm-headline">
+          <h4 class="about-btm-headline">Enjoy the World class taste!
+          </h4>
+          <h1 class="about-btm-headline">We offer a wide <br> 
+            array of servicess</h1>
+        </div>
+        <div class="container-md">
+          <div class="row d-flex">
+            <div class="card col-lg-3" style="width: 17.5rem;" id="about-btm-reservation-card">
+              <img src="menu-items/reservation.svg" class="card-img-top about-btm-card-img" alt="table reservation" >
+              <div class="card-body" id="reservation-card-body">
+                <h3 class="about-card-body-heading">Reservations</h3>
+                <p class="card-text">Reserve your table at Grill N Chill and rest assured that you will have one of the best cuisine of your life.</p>
+              </div>
+            </div><div class="card col-lg-3" style="width: 17.5rem;" id="about-btm-online-card">
+              <img src="menu-items/online-order.svg" class="card-img-top about-btm-card-img" alt="online orders">
+              <div class="card-body" id="online-card-body">
+                <h3 class="about-card-body-heading">Online Orders</h3>
+                <p class="card-text">We deliver our signature, authentic food to you in the comfort of your place. Check our menu and place the order.</p>
+              </div>
+            </div><div class="card col-lg-3" style="width: 17.5rem;" id="about-btm-events-card">
+              <img src="menu-items/private-events.svg" class="card-img-top about-btm-card-img" alt="private events">
+              <div class="card-body" id="events-card-body">
+                <h3 class="about-card-body-heading">Private Events</h3>
+                <p class="card-text">We know that good food is the soul of every event and aim to offer you the best food and the widest variety for your special events.</p>
+              </div>
+            </div><div class="card col-lg-3" style="width: 17.5rem;" id="about-btm-delivery-card">
+              <img src="menu-items/food-delivery.svg" class="card-img-top about-btm-card-img" alt="food-delivery">
+              <div class="card-body" id="delivery-card-body">
+                <h3 class="about-card-body-heading">Food Delivery</h3>
+                <p class="card-text">Food that you will want to relish immediately, delivered to your doorstep as quick as possible.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  <br>
+    <hr />
+    <footer class="container-md">
+      <div class="row mb-3">
+        <div class="col-lg-6 col-md-12">
+          <p>
+            &nbsp;No Copyright Issue, Feel free to copy | If you need any help with
+            this, Ping me...!
+          </p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <span class="col-sm-12 col-md-3"
+          >&nbsp;&#169; 2022 Made with &#10084; By Surya</span>
+          <div class="col-sm-12 col-md-3">
+            <a href="https://github.com/wolfofweb" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg>Github</a>
+            </div>
+        <a
+          href="https://www.meity.gov.in/writereaddata/files/policy_on_adoption_of_oss.pdf"
+          target="_blank"
+          class="col-sm-12 col-md-3 privacy"
+          >&nbsp;Policy on Adoption</a
+        >
+        <a href="terms.html" class="col-sm-12 col-md-3 terms" target="_blank"
+          >&nbsp;Terms and conditions</a
+        >
+      </div>
+    </footer>
+    <!-- Bootstrap Javascript CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

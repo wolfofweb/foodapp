@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Menu</title>
+    <!-- Link for favicon -->
+    <link rel="icon" href="/logo.png" sizes="16x16" />
+    <!-- Link for Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2d98f6439c.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!--CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body onscroll="topScrollFunction()">
+    <nav
+      class="sticky-top navigation menu-navbar navbar navbar-expand-lg navbar-dark"
+    >
+      <div class="container-fluid">
+        <a
+          class="main-title navbar-brand"
+          href="index.html"
+          id="menu-page-title"
+          >Grill N Chill</a
+        >
+        <a class="main-title navbar-brand" href="index.html" id="menu-page-icon"
+          ><i class="fa fa-cutlery" aria-hidden="true"></i
+        ></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item" >
+              <a class="nav-link navItem" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a style="color:orange;" class="nav-link navItem" href="menu.html">Our Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="review.html"
+                >Rate Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <!-- Filter Area -->
+          <div class="btn-group" id="filter">
+            <!-- Veg only button area -->
+            <p id="veg-button-text">Veg only</p>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="veg-button"
+                role="switch"
+                id="flexSwitchCheckDefault"
+                onclick="vegOnly()"
+              />
+              <label
+                class="form-check-label"
+                for="flexSwitchCheckDefault"
+              ></label>
+            </div>
+            <button
+              type="button"
+              class="btn btn-secondary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              id="filter-button"
+            >
+              <span id="filter-text">Filter</span>
+              <span id="filter-icon"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#starters-heading">Starters</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#main-course-heading"
+                  >Main Course</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#grills-heading"
+                  >Grills and BBQ</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#breads-heading"
+                  >Indian and Arabian Breads</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#soups-heading">Soups</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#desserts-heading"
+                  >Desserts and Beverages</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Toggler button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="toggle-button">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="2em"
+                width="2em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M464 256H48a48 48 0 0 0 0 96h416a48 48 0 0 0 0-96zm16 128H32a16 16 0 0 0-16 16v16a64 64 0 0 0 64 64h352a64 64 0 0 0 64-64v-16a16 16 0 0 0-16-16zM58.64 224h394.72c34.57 0 54.62-43.9 34.82-75.88C448 83.2 359.55 32.1 256 32c-103.54.1-192 51.2-232.18 116.11C4 180.09 24.07 224 58.64 224zM384 112a16 16 0 1 1-16 16 16 16 0 0 1 16-16zM256 80a16 16 0 1 1-16 16 16 16 0 0 1 16-16zm-128 32a16 16 0 1 1-16 16 16 16 0 0 1 16-16z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid p-auto mt-4">
+      <!-- Cart items button -->
+        <a href="cart.html">
+      <button id="cart-items">
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+          id="cart-items-count"
+        >
+          0</span
+        >
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path fill="none" d="M8.246 11L18.246 11 19.675 6 6.428 6z"></path>
+          <path
+            d="M21,4H5H4H2v2h2h0.3l3.282,9.025C8.011,16.206,9.145,17,10.401,17H19v-2h-8.599c-0.419,0-0.797-0.265-0.94-0.658L8.973,13 h9.273c0.89,0,1.68-0.598,1.923-1.451l1.793-6.274c0.086-0.302,0.025-0.626-0.163-0.877C21.609,4.147,21.313,4,21,4z M18.246,11 h-10L6.428,6h13.247L18.246,11z"
+          ></path>
+          <circle cx="10.5" cy="19.5" r="1.5"></circle>
+          <circle cx="16.5" cy="19.5" r="1.5"></circle>
+        </svg>
+      </button></a
+      >
+      <!-- Go to top button -->
+      <button onclick="topFunction()" class="topper">
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 4H18V6H6zM6.707 15.707L11 11.414 11 20 13 20 13 11.414 17.293 15.707 18.707 14.293 12 7.586 5.293 14.293z"
+          ></path>
+        </svg>
+      </button>
+      <!-- Menu Heading Starters -->
+      <div class="container-fluid justify-content-between d-flex">
+        <h1 class="display-5 mb-4 menu-heading" id="starters-heading">
+          Starters
+          <span id="top"></span>
+        </h1>
+      </div>
+      <div class="row d-flex menu-section align-content-start p-3">
+        <!-- starters 1 chicken kebab -->
+        <div class="card mb-3" id="kebab" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/chickenKebab.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken Kebab"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Kebab</h5>
+                <p class="card-text">
+                  Juicy, flavorful chicken kebabs made in mild smoke
+                </p>
+                <p class="cost"><b>&#8377; 140</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Starters 2 chicken 65 -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/chicken65.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken 65"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Chicken 65</h5>
+                <p class="card-text">
+                  Crispy Indian classical famous for its crunchiness
+                </p>
+                <p class="cost"><b>&#8377; 120</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 3 Paneer tikka -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/paneerTikka.jpg"
+                class="img-fluid rounded-start"
+                alt="Paneer Tikka"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Paneer Tikka</h5>
+                <p class="card-text">
+                  Marinated fresh cottage cheese grilled in mild flame and smoke
+                </p>
+                <p class="cost"><b>&#8377; 120</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 4 chicken momo -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/chickenMomo.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken Momos"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Momos</h5>
+                <p class="card-text">
+                  Chicken stuffed, boiled and fried hot chicken momos
+                </p>
+                <p class="cost"><b>&#8377; 130</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 5 crispy corn -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/crispyCorn.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken Kebab"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Crispy Corn</h5>
+                <p class="card-text">
+                  crunchy and juicy sweet corn marinated and fried in shallow
+                  flame
+                </p>
+                <p class="cost"><b>&#8377; 100</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 6 malai Kofta -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/malaiKofta.jpg"
+                class="img-fluid rounded-start"
+                alt="Malai kofta"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Malai kofta</h5>
+                <p class="card-text">
+                  Curried veg dish consisting of fried potato and fried paneer
+                  balls
+                </p>
+                <p class="cost"><b>&#8377; 140</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 7 dragon chicken -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/dragonChicken.jpg"
+                class="img-fluid rounded-start"
+                alt="Dragon Chicken"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Dragon Chicken</h5>
+                <p class="card-text">
+                  Chicken fried till it reaches its crisp and tossed in spicy
+                  sauce
+                </p>
+                <p class="cost"><b>&#8377; 160</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 8 fish fingers -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/fishFingers.jpg"
+                class="img-fluid rounded-start"
+                alt="Fish Fingers"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Fish Fingers</h5>
+                <p class="card-text">
+                  Freshly Battered Cod fish sticks oven grilled and shallow
+                  fried
+                </p>
+                <p class="cost"><b>&#8377; 150</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 9 golden prawns -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/goldenFriedPrawn.jpg"
+                class="img-fluid rounded-start"
+                alt="Golden prawns"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Golden Prawns</h5>
+                <p class="card-text">
+                  Battered medium sized prawns golden fried and served with
+                  oyster sauce
+                </p>
+                <p class="cost"><b>&#8377; 160</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 10 cheese balls -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/cheeseBalls.jpg"
+                class="img-fluid rounded-start"
+                alt="Cheese Balls"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Cheese Balls</h5>
+                <p class="card-text">
+                  Delicious crispy snack made with cream cheese and chopped
+                  pecans
+                </p>
+                <p class="cost"><b>&#8377; 120</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 11 chicken lollipop -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/chickenLollipop.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken Lollipop"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Lollipop</h5>
+                <p class="card-text">
+                  Indo-chinese appetizer made in marinated chicken drumette
+                </p>
+                <p class="cost"><b>&#8377; 160</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="-currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters 12 butter chicken-->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/butterChicken.jpg"
+                class="img-fluid rounded-start"
+                alt="Butter Chicken"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Butter Chicken</h5>
+                <p class="card-text">
+                  Grilled chicken simmered in spicy masala curry with butter
+                </p>
+                <p class="cost"><b>&#8377; 150</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heading 2 Main course -->
+      <h1 class="display-5 mb-4 menu-heading" id="main-course-heading">
+        Main course
+      </h1>
+      <div class="row d-flex  menu-section align-content-start  p-3">
+        <!-- Main course 1 meals -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/meals.jpg"
+                class="img-fluid rounded-start"
+                alt="South indian meals"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">South Indian Meals</h5>
+                <p class="card-text">
+                  Traditional south indian Meals with rice, curries and side
+                  dishes
+                </p>
+                <p class="cost"><b>&#8377; 130</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main course 2 Chicken Biriyani -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/chickenBiriyani.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken Biriyani"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Biriyani</h5>
+                <p class="card-text">
+                  World famous chicken biriyani made in traditional method
+                </p>
+                <p class="cost"><b>&#8377; 180</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main course 3 Mutton Biriyani -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/muttonBiriyani.jpg"
+                class="img-fluid rounded-start"
+                alt="Mutton Biriyani"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Mutton Biriyani</h5>
+                <p class="card-text">
+                  Cooked with tender and soft mutton meat for flavour and taste
+                </p>
+                <p class="cost"><b>&#8377; 250</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main course 4 chicken fried rice -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/chickenFriedRice.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken Fried Rice"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Fried rice</h5>
+                <p class="card-text">
+                  Chinese style tossed chicken fried rice with egg and spices
+                </p>
+                <p class="cost"><b>&#8377; 150</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- main course 5 veg fried rice -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/vegFriedRice.jpg"
+                class="img-fluid rounded-start"
+                alt="Veg fried rice"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Veg Fried rice</h5>
+                <p class="card-text">
+                  vegetarian fried rice made with fresh vegetables and spices
+                </p>
+                <p class="cost"><b>&#8377; 140</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- main course 6 chicken noodles -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/chickenNoodles.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken noodles"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Noodles</h5>
+                <p class="card-text">
+                  Chinese style chicken noodles made with home made noodles
+                </p>
+                <p class="cost"><b>&#8377; 150</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- main course 7 veg noodles -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/vegNoodles.jpg"
+                class="img-fluid rounded-start"
+                alt="veg noodles"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Veg Noodles</h5>
+                <p class="card-text">
+                  Vegetarian noodles made freshly with home made noodles
+                </p>
+                <p class="cost"><b>&#8377; 140</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- main course 8 american choupsey -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/americanChopSuey.jpg"
+                class="img-fluid rounded-start"
+                alt="American chop suey"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">American chop suey</h5>
+                <p class="card-text">
+                  Made with fried noodles and semi boiled egg
+                </p>
+                <p class="cost"><b>&#8377; 180</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- main course 9 Sea food mixed rice-->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/seaFoodFriedRice.jpg"
+                class="img-fluid rounded-start"
+                alt="Sea food fried rice"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Sea-food Fried Rice</h5>
+                <p class="card-text">
+                  Mixed fried rice with sea food like fish, prawns and squid
+                </p>
+                <p class="cost"><b>&#8377; 180</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heading 3 Grills -->
+      <h1 class="display-5 mb-4 menu-heading" id="grills-heading">
+        Grills and BBQ
+      </h1>
+      <div class="row d-flex  menu-section align-content-start  p-3">
+        <!-- grills 1 grill chicken -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/grillChicken.jpg"
+                class="img-fluid rounded-start"
+                alt="Grilled Chicken"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Grilled Chicken</h5>
+                <p class="card-text">
+                  Spice brushed chicken breasts grilled in low smoke
+                </p>
+                <p class="cost"><b>&#8377; 250</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- grills 2 al faham -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/alFaham.jpg"
+                class="img-fluid rounded-start"
+                alt="Al Faham Chicken"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Al Faham Chicken</h5>
+                <p class="card-text">
+                  Arabic grill dish made of full chicken infused with spices
+                </p>
+                <p class="cost"><b>&#8377; 410</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- grills 3 abode grilled chicken -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/abodeGrilledChicken.jpg"
+                class="img-fluid rounded-start"
+                alt="Abode Grill Chicken"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Abode grill chicken</h5>
+                <p class="card-text">
+                  Italian style perfectly cooked and moist marinated chicken
+                </p>
+                <p class="cost"><b>&#8377; 300</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- grills 4 grilled lamb ribs -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/grilledLambRibs.jpg"
+                class="img-fluid rounded-start"
+                alt="Grilled Lamb Ribs"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Grilled Lamb ribs</h5>
+                <p class="card-text">
+                  Tender lamb ribs infused with barbeque sauce and grilled
+                </p>
+                <p class="cost"><b>&#8377; 450</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- grills 5 Chicken BBQ -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/barbeque.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken BBQ"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Chicken BBQ</h5>
+                <p class="card-text">
+                  Barbeque sauce infused chicken grilled in shallow flame
+                </p>
+                <p class="cost"><b>&#8377; 400</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- grills 6 Tandoori chicken -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/tandooriChicken.jpg"
+                class="img-fluid rounded-start"
+                alt="Tandoori Chicken"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Tandoori chicken</h5>
+                <p class="card-text">
+                  Yogurt and spice marinated chicken cooked in clay oven
+                </p>
+                <p class="cost"><b>&#8377; 400</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heading 4 Breads -->
+      <h1 class="display-5 mb-4 menu-heading" id="breads-heading">
+        Indian and Arabian Breads
+      </h1>
+      <div class="row d-flex  menu-section align-content-start  p-3">
+        <!-- Breads 1 Shawarma -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/shawarmaRoll.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken shawarma roll"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Shawarma Roll</h5>
+                <p class="card-text">
+                  Arab style kuboos rolled with slow grilled chicken and
+                  mayonnaise
+                </p>
+                <p class="cost"><b>&#8377; 90</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- breads 2 plated shawarma -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/shawarmaPlate.jpg"
+                class="img-fluid rounded-start"
+                alt="Plated shawarma"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Plated Shawarma</h5>
+                <p class="card-text">
+                  Plattered shawarma served with salted veggies and mayyonaise
+                </p>
+                <p class="cost"><b>&#8377; 120</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- breads 3 plain parotta -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/plainParotta.jpg"
+                class="img-fluid rounded-start"
+                alt="Plain parotta"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Plain Parotta</h5>
+                <p class="card-text">
+                  Kerala style soft and layered plain parotta without curry
+                </p>
+                <p class="cost"><b>&#8377; 25</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- breads 4 butter naan -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/butterNaan.jpg"
+                class="img-fluid rounded-start"
+                alt="Butter Naan"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Butter Naan</h5>
+                <p class="card-text">
+                  Butter brushed naan cooked in clay oven for its softness
+                </p>
+                <p class="cost"><b>&#8377; 40</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- breads 5 kuboos/pita bread -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/kuboos.jpg"
+                class="img-fluid rounded-start"
+                alt="Kuboos/Pita bread"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Kuboos/Pita Bread</h5>
+                <p class="card-text">
+                  Arabian style plain fluffy kuboos made in clay oven with sour
+                  dough
+                </p>
+                <p class="cost"><b>&#8377; 30</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- breads 6 Garlic bread -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/garlicBread.jpg"
+                class="img-fluid rounded-start"
+                alt="Garlic Bread"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Garlic Bread</h5>
+                <p class="card-text">
+                  Garlic sauce infused and spice coated bread baked for its
+                  crispyness
+                </p>
+                <p class="cost"><b>&#8377; 50</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heading 5 Soups -->
+      <h1 class="display-5 mb-4 menu-heading" id="soups-heading">Soups</h1>
+      <div class="row d-flex  menu-section align-content-start  p-3">
+        <!-- soups 1 chicken Manchow soup -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/chickenManchowSoup.jpg"
+                class="img-fluid rounded-start"
+                alt="Chicken Manchow Soup"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Manchow soup</h5>
+                <p class="card-text">
+                  Chinese styled soup made with stir fried chicken
+                </p>
+                <p class="cost"><b>&#8377; 100</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- soups 2 Cream of chicken soup -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/creamOfChickenSoup.jpg"
+                class="img-fluid rounded-start"
+                alt="Cream of chicken soup"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Cream of chicken soup</h5>
+                <p class="card-text">
+                  Rich and classic soup made with cream and tender chicken
+                </p>
+                <p class="cost"><b>&#8377; 110</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- soups 3 Sweet corn veg soup -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/sweetCornVegSoup.jpg"
+                class="img-fluid rounded-start"
+                alt="Sweet corn veg soup"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Sweet corn veg soup</h5>
+                <p class="card-text">
+                  Hot soup made with fried crispy sweet corn
+                </p>
+                <p class="cost"><b>&#8377; 90</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- soups 4 Hot and sour chicken soup -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/hotAndSourChickenSoup.jpg"
+                class="img-fluid rounded-start"
+                alt="Hot and sour chicken soup"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Hot and Sour Chicken soup</h5>
+                <p class="card-text">
+                  Hot Soup made with spiceness and sourness
+                </p>
+                <p class="cost"><b>&#8377; 110</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="non-veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--soups 5 cream of tomato soup -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/creamOfTomatoSoup.jpg"
+                class="img-fluid rounded-start"
+                alt="Cream of tomato soup"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Cream of tomato soup</h5>
+                <p class="card-text">
+                  Sour tomato soup made by tomato and cream
+                </p>
+                <p class="cost"><b>&#8377; 90</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--soups 6 Veg hot and sour soup -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/vegHotAndSourSoup.jpg"
+                class="img-fluid rounded-start"
+                alt="Veg hot and sour soup"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Veg hot and sour soup</h5>
+                <p class="card-text">Hot and spicy soup made with vegetables</p>
+                <p class="cost"><b>&#8377; 90</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heading 6 desserts and beverages -->
+      <h1 class="display-5 mb-4 menu-heading" id="desserts-heading">
+        Desserts and Beverages
+      </h1>
+      <div class="row d-flex  menu-section align-content-start  p-3">
+        <!-- desserts and beverages 1 icecream scoop -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">   
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/scoopOfIceCream.jpg"
+                class="img-fluid rounded-start"
+                alt="Icecream Scoop"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Ice Cream - Scoop</h5>
+                <p class="card-text">
+                  A Scoop of home made ice cream with any flavour of your choice
+                </p>
+                <p class="cost"><b>&#8377; 80</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- desserts and beverages 2 cheese cake -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/caramelCheeseCake.jpg"
+                class="img-fluid rounded-start"
+                alt="Caramel cheese cake"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Caramel cheese cake</h5>
+                <p class="card-text">
+                  Freshly baked caramel flavoured cheese cake
+                </p>
+                <p class="cost"><b>&#8377; 100</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- deserts and beverages 3 Rasamalai/Gulabjamun -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/rasamalaiGulabJamun.jpg"
+                class="img-fluid rounded-start"
+                alt="Rasamalai/gulabjamum"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Rasamalai/Gulab Jamun</h5>
+                <p class="card-text">Rasamalai or Gulab Jamun of your choice</p>
+                <p class="cost"><b>&#8377; 70</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- desserts and beverages 4 lassi -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/sweetLassi.jpg"
+                class="img-fluid rounded-start"
+                alt="Sweet Lassi"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Sweet Lassi</h5>
+                <p class="card-text">
+                  Foamy and chilled fresh sweet lassi with flavour toppings
+                </p>
+                <p class="cost"><b>&#8377; 80</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- desserts and beverages fresh juice -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/freshJuice.jpg"
+                class="img-fluid rounded-start"
+                alt="Fresh Juices"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Fresh Juices</h5>
+                <p class="card-text">
+                  Mug of Fresh fruit juice with any fruits of your choice
+                </p>
+                <p class="cost"><b>&#8377; 90</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- desserts and beverages Milk shakes -->
+        <div class="card mb-3" style="max-width: 420px">
+          <div class="row g-0">
+            <div class="col-md-6 card-image">
+              <img
+                src="menu-items/milkShake.jpg"
+                class="img-fluid rounded-start"
+                alt="Milk shakes"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Milk shakes</h5>
+                <p class="card-text">
+                  Fresh Milk shake with Icecream with any flavour of your choice
+                </p>
+                <p class="cost"><b>&#8377; 100</b></p>
+                <button class="fw-bold add-button">Add to cart</button>
+                <span class="veg">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="2.5em"
+                    width="2.5em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M19,19H5V5h14V19z"
+                    ></path>
+                    <circle cx="12" cy="12" r="5"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <footer class="container-md">
+      <div class="row mb-3">
+        <div class="col-lg-6 col-md-12">
+          <p>
+            &nbsp;No Copyright Issue, Feel free to copy | If you need any help
+            with this, Ping me...!
+          </p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <span class="col-sm-12 col-md-3"
+          >&nbsp;&#169; 2022 Made with &#10084; By Surya</span
+        >
+        <div class="col-sm-12 col-md-3">
+          <a href="https://github.com/wolfofweb" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg>Github</a>
+          </div>
+        <a
+          href="https://www.meity.gov.in/writereaddata/files/policy_on_adoption_of_oss.pdf"
+          target="_blank"
+          class="col-sm-12 col-md-3 privacy"
+          >&nbsp;Policy on Adoption</a
+        >
+        <a href="terms.html" class="col-sm-12 col-md-3 terms" target="_blank"
+          >&nbsp;Terms and conditions</a
+        >
+      </div>
+    </footer>
+
+    <!-- Bootstrap Javascript CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <script src="menu.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

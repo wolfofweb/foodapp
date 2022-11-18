@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content=" IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <!-- Link for favicon -->
+    <link rel="icon" href="/logo.png" sizes="16x16" />
+    <!-- Link for Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2d98f6439c.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!--CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav
+      class="sticky-top navigation menu-navbar navbar navbar-expand-lg navbar-dark"
+    >
+      <div class="container-fluid">
+        <a
+          class="main-title navbar-brand"
+          href="index.html"
+          >Grill N Chill</a
+        >
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link navItem" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="menu.html">Our Menu</a>
+            </li>
+            <li class="nav-item">
+              <a style="color:orange;" class="nav-link navItem" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="review.html"
+                 >Rate Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          </div>
+
+          <!-- Toggler button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="toggle-button">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="2em"
+                width="2em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M464 256H48a48 48 0 0 0 0 96h416a48 48 0 0 0 0-96zm16 128H32a16 16 0 0 0-16 16v16a64 64 0 0 0 64 64h352a64 64 0 0 0 64-64v-16a16 16 0 0 0-16-16zM58.64 224h394.72c34.57 0 54.62-43.9 34.82-75.88C448 83.2 359.55 32.1 256 32c-103.54.1-192 51.2-232.18 116.11C4 180.09 24.07 224 58.64 224zM384 112a16 16 0 1 1-16 16 16 16 0 0 1 16-16zM256 80a16 16 0 1 1-16 16 16 16 0 0 1 16-16zm-128 32a16 16 0 1 1-16 16 16 16 0 0 1 16-16z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid p-auto mt-4">
+      <!-- Cart items button -->
+        <a href="cart.html">
+      <button id="cart-items">
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+          id="cart-items-count"
+        >
+          0</span
+        >
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path fill="none" d="M8.246 11L18.246 11 19.675 6 6.428 6z"></path>
+          <path
+            d="M21,4H5H4H2v2h2h0.3l3.282,9.025C8.011,16.206,9.145,17,10.401,17H19v-2h-8.599c-0.419,0-0.797-0.265-0.94-0.658L8.973,13 h9.273c0.89,0,1.68-0.598,1.923-1.451l1.793-6.274c0.086-0.302,0.025-0.626-0.163-0.877C21.609,4.147,21.313,4,21,4z M18.246,11 h-10L6.428,6h13.247L18.246,11z"
+          ></path>
+          <circle cx="10.5" cy="19.5" r="1.5"></circle>
+          <circle cx="16.5" cy="19.5" r="1.5"></circle>
+        </svg>
+      </button></a
+      >
+      </div>
+   <!-- Cart Items Body area -->
+   <div class="container-md product-container">
+    <div class="mt-5 container-fluid row d-flex product-header">
+        <h4 class="product-title col-5">Food Item</h5>
+        <h4 class="product-cost col-2">Cost</h4>
+        <h5 class="product-quantity col-3">Quantity</h5>
+        <h5 class="total col-2">Total</h5>
+    </div>
+    <div class="products row d-flex align-items-center container-fluid">
+    </div>
+   </div>
+   <div class="container-md mt-4 cart-control-buttons text-center">
+    <a href="menu.html">
+    <button class=" btn btn-lg" id="cart-add-items">Add Items</button>
+    </a>
+      <button class="btn btn-lg btn-success" id="cart-check-out">Check Out</button>
+   </div>
+   <hr />
+   <footer class="container-md">
+     <div class="row mb-3">
+       <div class="col-lg-6 col-md-12">
+         <p>
+           &nbsp;No Copyright Issue, Feel free to copy | If you need any help
+           with this, Ping me...!
+         </p>
+       </div>
+     </div>
+     <div class="row mt-4">
+       <span class="col-sm-12 col-md-3"
+         >&nbsp;&#169; 2022 Made with &#10084; By Surya</span
+       >
+       <div class="col-sm-12 col-md-3">
+        <a href="https://github.com/wolfofweb" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg>Github</a>
+        </div>
+       <a
+         href="https://www.meity.gov.in/writereaddata/files/policy_on_adoption_of_oss.pdf"
+         target="_blank"
+         class="col-sm-12 col-md-3 privacy"
+         >&nbsp;Policy on Adoption</a
+       >
+       <a href="terms.html" class="col-sm-12 col-md-3 terms" target="_blank"
+         >&nbsp;Terms and conditions</a
+       >
+     </div>
+   </footer>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- Bootstrap Javascript CDN -->
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+crossorigin="anonymous"
+></script>
+<script src="cart.js"></script>
+<script src="menu.js"></script>
+  </body>
+</html>

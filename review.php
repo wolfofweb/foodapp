@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content=" IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review</title>
+    <!-- Link for favicon -->
+    <link rel="icon" href="/logo.png" sizes="16x16" />
+    <!-- Link for Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2d98f6439c.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!--CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <style>
+        .star-widget{
+            display:none;
+        }
+        .post{
+            display:block;
+        }
+    </style> -->
+  </head>
+  <body>
+    <nav
+      class="sticky-top navigation menu-navbar navbar navbar-expand-lg navbar-dark"
+    >
+      <div class="container-fluid">
+        <a
+          class="main-title navbar-brand"
+          href="index.html"
+          >Grill N Chill</a
+        >
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link navItem" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="menu.html">Our Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="review.html" style="color: orange"
+                 >Rate Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          </div>
+
+          <!-- Toggler button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="toggle-button">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="2em"
+                width="2em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M464 256H48a48 48 0 0 0 0 96h416a48 48 0 0 0 0-96zm16 128H32a16 16 0 0 0-16 16v16a64 64 0 0 0 64 64h352a64 64 0 0 0 64-64v-16a16 16 0 0 0-16-16zM58.64 224h394.72c34.57 0 54.62-43.9 34.82-75.88C448 83.2 359.55 32.1 256 32c-103.54.1-192 51.2-232.18 116.11C4 180.09 24.07 224 58.64 224zM384 112a16 16 0 1 1-16 16 16 16 0 0 1 16-16zM256 80a16 16 0 1 1-16 16 16 16 0 0 1 16-16zm-128 32a16 16 0 1 1-16 16 16 16 0 0 1 16-16z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+<?php
+ error_reporting(0);
+ $servername='localhost';
+ $username='root';
+ $password='';
+ $dbname='food';
+// if(isset($_SERVER['REQUEST_METHOD']=='POST'))
+{ 
+     // error_reporting(0);
+ $servername='localhost';
+ $username='root';
+ $password='';
+ $dbname='food';
+ $conn=new mysqli($servername,$username,$password,$dbname);
+            //Get values into variables by their name
+            $star=$_POST['rate'];
+            $review=$_POST['review'];
+            $conn=new mysqli($servername,$username,$password,$dbname);
+            if(isset($_POST['submit']))
+            //Insert Values into MySQL 
+            $sql = "INSERT INTO rating(star,review)VALUES('$star','$review')";
+        //To check whether data is inserted properly or not
+        if ($conn->query($sql) === TRUE) { echo ""; } else { echo "
+        <p class='alert alert-danger mt-4'>" . "Error in sending message, Please contact via social Media" . "
+        </p>
+        "; //close the connection after data entry
+         $conn->close(); } 
+    }
+?>  
+<!-- Star rating Area -->
+<h2 class="text-center display-5" id="review-heading">How was your Experience...?</h2>
+<div class="rating d-flex justify-content-center">
+    <div class="star-rating">
+      <div class="post">
+        <div class="text">Thanks for rating us!</div>
+        <a href="review.html">
+        <div class="edit">EDIT</div>
+
+        </a>
+      </div>
+      <div class="star-widget">
+        <div class="stars">
+        <input type="radio" name="rate" id="rate-5">
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-4">
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-3">
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-2">
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-1">
+        <label for="rate-1" class="fas fa-star"></label>
+        </div>
+          <header id="header1">My Experience was bad</header>
+          <header id="header2">My Experience was <br> below Average</header>
+          <header id="header3">My Experience was Average</header>
+          <header id="header4">My Experience was good</header>
+          <header id="header5">My Experience was Awesome</header>
+          <div class="textarea">
+            <textarea cols="30" placeholder="Describe your experience.."></textarea>
+          </div>
+          <div id="btn">
+            <button class="post-btn" type="submit">Post</button>
+          </div>
+      </div>
+    </div>
+    </div>
+    
+
+
+
+
+<!-- Testimonials area -->
+    <div class="container-md mt-4">
+        <h2 class="text-center display-5" id="testimonial-heading">What our Fantastic Customers Say...!</h2>
+        <div class="d-flex row justify-content-between">
+    		<div class="col-md-6 my-4 col-lg-4">
+    		    <div class="card testimonial-card">
+    		        <div class="background-image">
+    		            <img src="testimonials/virat-bg.jpg"alt="customer-1-bg-image" class="background"/>
+    		        </div>
+    		        <div class="profile-image">
+    		            <img src="testimonials/virat.jpg" alt="customer-1-image" class="profile"/>
+    		        </div>
+    		        <div class="card-content">
+                    <h2 class="fw-bold">Virat Kohli<small>Cricketer</small></h2>
+                    <div class="card-text">
+                        <h2>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h2>
+                        Thanks for such a memorable night. I Really loved this place 200%. Great ambience, delcious food and good customer service
+                    </div>
+                    </div>
+                </div>
+    		</div>
+    		<div class="col-md-6 my-4 col-lg-4">
+    		    <div class="card testimonial-card">
+    		        <div class="background-image">
+    		            <img src="testimonials/surya-bg.jpg" alt="profile-sample1" class="background"/>
+    		        </div>
+    		        <div class="profile-image">
+    		            <img src="testimonials/surya.jpg" alt="profile-image" class="profile"/>
+    		        </div>
+    		        <div class="card-content">
+                    <h2 class="fw-bold">Surya<small>Web Developer</small></h2>
+                        <div class="card-text">
+                            <h2>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h2>
+                            Such a great place with very friendly staff and of course excellent food, beverages and desserts! Highly recommend this place for all visitors
+                        </div>
+                    </div>
+                </div>
+    		</div>
+    		<div class="col-md-6 my-4 col-lg-4">
+    		    <div class="card testimonial-card">
+    		        <div class="background-image">
+    		            <img src="testimonials/ronaldo-bg.jpg" alt="profile-sample1" class="background"/>
+    		        </div>
+    		        <div class="profile-image">
+    		            <img src="testimonials/ronaldo.jpg" alt="profile-image" class="profile"/>
+    		        </div>
+    		        <div class="card-content">
+                    <h2 class="fw-bold">Cristiano Ronaldo<small>Football Player</small></h2>
+                        <div class="card-text">
+                            <h2>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half"></i></h2>
+                          I can not fault the food at this place! The service is always amazing and they have a huge selection to choose from Best place on this side of town by far!!
+                        </div>
+                </div>
+    		</div>
+        </div>
+ </div>
+   
+   <hr />
+   <footer class="container-md">
+     <div class="row mb-3">
+       <div class="col-lg-6 col-md-12">
+         <p>
+           &nbsp;No Copyright Issue, Feel free to copy | If you need any help
+           with this, Ping me...!
+         </p>
+       </div>
+     </div>
+     <div class="row mt-4">
+       <span class="col-sm-12 col-md-3"
+         >&nbsp;&#169; 2022 Made with &#10084; By Surya</span
+       >
+       <div class="col-sm-12 col-md-3">
+        <a href="https://github.com/wolfofweb" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg>Github</a>
+        </div>
+       <a
+         href="https://www.meity.gov.in/writereaddata/files/policy_on_adoption_of_oss.pdf"
+         target="_blank"
+         class="col-sm-12 col-md-3 privacy"
+         >&nbsp;Policy on Adoption</a
+       >
+       <a href="terms.html" class="col-sm-12 col-md-3 terms" target="_blank"
+         >&nbsp;Terms and conditions</a
+       >
+     </div>
+   </footer>
+<!-- Bootstrap Javascript CDN -->
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+crossorigin="anonymous"
+></script>
+<script src="reviewPhp.js"></script>
+  </body>
+</html>
