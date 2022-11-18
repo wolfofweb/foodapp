@@ -1,6 +1,6 @@
 # foodapp
 This is a fully responsive restaurant web app that has full cart options, filter sort options, star rating and contact form with backend MySQL database connectivity using PHP. 
-The link for the hosted site is www.wolfofweb.github.io/foodapp
+The link for the hosted site is https://wolfofweb.github.io/foodapp/
 These images are the overview of the home page
 ![image](https://user-images.githubusercontent.com/110967235/202606964-4628958f-db6b-404e-8730-c64dc9056439.png)
 ![image](https://user-images.githubusercontent.com/110967235/202606905-f61ea28d-7783-4c8f-8796-6ebdd02cbfa2.png)
